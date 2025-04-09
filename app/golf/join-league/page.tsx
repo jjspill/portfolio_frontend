@@ -124,7 +124,8 @@ const JoinLeaguePage: React.FC = () => {
           return;
         }
         alert('Team created successfully!');
-        revalidatePath(`/golf/leaderboard/${leagueId}`);
+        // revalidatePath(`/golf/leaderboard/${encodeURIComponent(leagueId)}`);
+        console.log('pushing to leaderboard');
         router.push(`/golf/leaderboard/${encodeURIComponent(leagueId)}`);
       })
       .catch((error) => console.error('Error creating team:', error));
