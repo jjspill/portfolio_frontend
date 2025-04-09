@@ -39,7 +39,7 @@ function fixFirstName(firstName: string) {
 
 export function shouldDisplayData() {
   const now = new Date();
-  const targetDate = new Date(Date.UTC(2024, 6, 18, 0, 0, 0));
+  const targetDate = new Date(Date.UTC(2025, 4, 10, 11, 40, 0));
   return now >= targetDate;
 }
 
@@ -51,7 +51,7 @@ function getTotalOfLowestScores(scores: number[]): number {
 }
 
 function sortTeamsByScore(
-  scoreBoard: ScoreboardRowData[],
+  scoreBoard: ScoreboardRowData[]
 ): ScoreboardRowData[] {
   return scoreBoard.sort((a, b) => a.total_score - b.total_score);
 }
@@ -59,7 +59,9 @@ function sortTeamsByScore(
 export function getScores(data: any): Scores {
   if (!data) return {};
   const scores = data.results.leaderboard.reduce((acc: any, item: any) => {
-    const key = `${item.first_name.toLowerCase()[0]}_${item.last_name.toLowerCase()}`;
+    const key = `${
+      item.first_name.toLowerCase()[0]
+    }_${item.last_name.toLowerCase()}`;
     acc[key] = {
       score: item.total_to_par,
       ...item,
@@ -83,7 +85,9 @@ export function assignScoresToTeams(config: Config[], scores: Scores) {
   const updatedTeams = config.map((team: Config) => {
     const teamScores = team.players.map((player: any) => {
       player.firstName = fixFirstName(player.firstName);
-      const key = `${player.firstName.toLowerCase()[0]}_${player.lastName.toLowerCase()}`;
+      const key = `${
+        player.firstName.toLowerCase()[0]
+      }_${player.lastName.toLowerCase()}`;
       // const key = 't_mckibbin';
       const score = scores[key];
       if (!score) {
@@ -100,8 +104,8 @@ export function assignScoresToTeams(config: Config[], scores: Scores) {
           playingStatus: !score.numHoles
             ? 'Awaiting Tee Time'
             : score.numHoles >= 18
-              ? 'Done for Day'
-              : 'Playing',
+            ? 'Done for Day'
+            : 'Playing',
           numHoles: score.numHoles,
           round: score.round,
           todaysScore: score.todaysScore,
@@ -120,7 +124,7 @@ export function assignScoresToTeams(config: Config[], scores: Scores) {
     }
 
     const total = getTotalOfLowestScores(
-      teamScores.map((player) => player?.score!),
+      teamScores.map((player) => player?.score!)
     );
 
     team.players = teamScores;
@@ -136,7 +140,7 @@ export function assignScoresToTeams(config: Config[], scores: Scores) {
 }
 
 export function getHighestActiveScore(
-  scores: Scores,
+  scores: Scores
 ): { name: string; score: number } | null {
   let highestScore = -Infinity;
   let highestScorer = null;

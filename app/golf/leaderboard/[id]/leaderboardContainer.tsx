@@ -37,9 +37,10 @@ export const LeaderboardContainer = ({
 
     const fetchTeamData = async () => {
       const res = await fetch(`/golf/api/league-data?leagueId=${leagueId}`, {
-        next: { revalidate: 60 * 5 },
+        next: { revalidate: 0 },
       });
       const data = await res.json();
+      console.log('Team data fetched:', data);
       setTeamData(data);
     };
 
@@ -81,7 +82,7 @@ export const LeaderboardContainer = ({
     <div className="items-justify-center w-full">
       <div className="flex flex-col justify-center items-center m-auto w-full max-w-lg">
         <div className="bg-gray-200 font-semibold text-2xl p-4 rounded-lg text-center mb-10">
-          <h1>{leagueId} Leaderboard</h1>
+          <h1>{decodeURIComponent(leagueId)} Leaderboard</h1>
           <UpdatedTime date={updatedAt} />
           {round > 2 && (
             <p className="text-base">Missed Cut Score: {highestScore.score}</p>

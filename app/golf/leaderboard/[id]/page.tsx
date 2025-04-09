@@ -32,6 +32,8 @@ export async function generateStaticParams() {
     return [];
   }
 
+  console.log(data);
+
   return data?.data?.map((league: string) => ({
     slug: league,
   }));

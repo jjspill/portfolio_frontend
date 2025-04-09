@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import course from '../../course.json';
 import { revalidatePath } from 'next/cache';
 export async function GET(request: NextRequest) {
-  revalidatePath('/golf/leaderboard/theopen2k24', 'page');
+  // revalidatePath('/golf/leaderboard/theopen2k24', 'page');
   const res = await fetch(
     'https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard',
     // 'http://localhost:3001/scores',
@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
         Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
       },
       next: { revalidate: 0 }, //
-    },
+    }
   );
 
   const data = await res.json();
@@ -49,7 +49,7 @@ const transformData = (data: any) => {
 
       const currentStrokes = competitor?.linescores[round - 1]?.value;
       const scoreList = competitor?.linescores[round - 1]?.linescores?.map(
-        (score: any) => score?.value,
+        (score: any) => score?.value
       );
 
       const numHoles = competitor?.linescores[round - 1]?.linescores?.length;
@@ -69,7 +69,7 @@ const transformData = (data: any) => {
         todaysScore: todaysScore,
         scoreList,
       };
-    },
+    }
   );
 
   return {

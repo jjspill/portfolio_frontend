@@ -45,7 +45,7 @@ export const GolfHomePage = () => {
   const { data: userGolfData, error } = useSWR<UserGolfTeam[]>(
     user ? [`/golf/api`, user.username] : null,
     fetcher,
-    swrConfig,
+    swrConfig
   );
 
   if (!user) {
@@ -65,7 +65,11 @@ export const GolfHomePage = () => {
           </div>
           <div>
             <div className="w-full h-fit rounded-lg pt-2 px-4 text-center">
-              <Link href="/golf/leaderboard/theopen2k24">
+              <Link
+                href={`/golf/leaderboard/${encodeURIComponent(
+                  'The Masters 2025'
+                )}`}
+              >
                 <div className="bg-green-500 hover:bg-green-600 w-full rounded-lg my-2 px-4 py-2 shadow-lg">
                   <p className="text-white font-bold text-xl">
                     View Leaderboard
@@ -136,9 +140,20 @@ export const GolfHomePage = () => {
           )}
         </div>
         <div className="w-full h-fit rounded-lg py-2 px-4 text-center">
-          <Link href="/golf/leaderboard/theopen2k24">
+          <Link
+            href={`/golf/leaderboard/${encodeURIComponent('The Masters 2025')}`}
+          >
             <div className="bg-green-500 hover:bg-green-600 w-full rounded-lg my-2 px-4 py-2 shadow-lg">
               <p className="text-white font-bold text-xl">View Leaderboard</p>
+            </div>
+          </Link>
+        </div>
+        <div className="w-full h-fit rounded-lg py-2 px-4 text-center">
+          <Link href="/golf/join-league">
+            <div className="bg-green-500 hover:bg-green-600 w-full rounded-lg my-2 px-4 py-2 shadow-lg">
+              <p className="text-white font-bold text-xl">
+                Join The Masters 2025
+              </p>
             </div>
           </Link>
         </div>

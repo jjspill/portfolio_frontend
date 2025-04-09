@@ -23,7 +23,7 @@ function LoginContainer() {
 
   React.useEffect(() => {
     if (user) {
-      router.push('/account');
+      router.push('/golf');
     }
   }, [user, router]);
 
@@ -62,6 +62,7 @@ function LoginContainer() {
         } else {
           const userTemp = createUser(email, data);
           setUser(userTemp);
+          router.push('/golf');
         }
       } else {
         console.error('Login failed:', data?.error);
@@ -69,7 +70,7 @@ function LoginContainer() {
           data?.details?.message ||
             data?.error?.message ||
             data?.message ||
-            data?.error,
+            data?.error
         );
       }
     } catch (error) {

@@ -59,7 +59,9 @@ export const LeaderboardRow: React.FC<LeaderboardRowProps> = ({
         <p className="flex-grow text-left">{name}</p>
         <p className="text-center w-10 pr-10">{total_score}</p>
         <svg
-          className={`transform transition-transform duration-300 ${showPlayers ? 'rotate-180' : 'rotate-0'}`}
+          className={`transform transition-transform duration-300 ${
+            showPlayers ? 'rotate-180' : 'rotate-0'
+          }`}
           fill="none"
           strokeWidth="1.5"
           stroke="currentColor"
@@ -82,9 +84,13 @@ export const LeaderboardRow: React.FC<LeaderboardRowProps> = ({
           {playerOrder?.map((player, index) => (
             <div
               key={index}
-              className={`mt-2 p-2 rounded shadow ${
-                index === playerOrder.length - 1 ? 'bg-red-100' : 'bg-green-100'
-              }`}
+              className={`mt-2 p-2 rounded shadow bg-green-100
+                `}
+              // ${
+              //   index === playerOrder.length - 1
+              //     ? 'bg-red-100'
+              //     : 'bg-green-100'
+              // }
             >
               <p>
                 {player.firstName} {player.lastName}
@@ -122,14 +128,14 @@ const convertUTCDateToLocalDate = (date: string): string => {
 export function UpdatedTime({ date }: { date: string }) {
   const convertedTime = React.useMemo(
     () => convertUTCDateToLocalDate(date),
-    [date],
+    [date]
   );
 
   return <span className="text-sm">{convertedTime}</span>;
 }
 
 function fixScore(
-  score: string | number | undefined | null,
+  score: string | number | undefined | null
 ): number | string | undefined {
   if (!score && score !== 0) {
     return undefined;
@@ -178,7 +184,13 @@ const Scorecard: React.FC<ScorecardProps> = ({ scores }) => {
                 (hole: { hole_number: number; par: number }, index: number) => (
                   <tr
                     key={index}
-                    className={`${scores[index] < hole.par ? 'bg-green-200' : scores[index] > hole.par ? 'bg-red-200' : 'bg-white'}`}
+                    className={`${
+                      scores[index] < hole.par
+                        ? 'bg-green-200'
+                        : scores[index] > hole.par
+                        ? 'bg-red-200'
+                        : 'bg-white'
+                    }`}
                   >
                     <td className="border px-4 py-2 text-center">
                       {hole.hole_number}
@@ -188,7 +200,7 @@ const Scorecard: React.FC<ScorecardProps> = ({ scores }) => {
                       {scores[index]}
                     </td>
                   </tr>
-                ),
+                )
               )}
             </tbody>
           </table>
