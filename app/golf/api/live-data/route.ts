@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import course from '../../course.json';
 import { revalidatePath } from 'next/cache';
 export async function GET(request: NextRequest) {
+  console.log('Fetching live data');
   // revalidatePath('/golf/leaderboard/theopen2k24', 'page');
   const res = await fetch(
     'https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard',
@@ -10,9 +11,10 @@ export async function GET(request: NextRequest) {
     {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
+        cache: 'no-store',
+        // Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
       },
-      next: { revalidate: 0 }, //
+      // next: { revalidate: 0 }, //
     }
   );
 
