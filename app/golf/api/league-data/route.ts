@@ -1,7 +1,7 @@
 import { getAPIUrl } from 'config/config';
 import { NextRequest } from 'next/server';
 import { splitName } from '../../leaderboard/leaderboardHelpers';
-import { revalidatePath } from 'next/cache';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   const apiUrl = getAPIUrl();
@@ -21,7 +21,6 @@ export async function GET(request: NextRequest) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
       },
-      next: { revalidate: 60 * 5 }, // 10 minutes
     });
 
     const league = await res.json();

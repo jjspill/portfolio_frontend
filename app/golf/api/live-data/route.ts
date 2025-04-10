@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import course from '../../course.json';
-import { revalidatePath } from 'next/cache';
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
   console.log('Fetching live data');
   // revalidatePath('/golf/leaderboard/theopen2k24', 'page');
