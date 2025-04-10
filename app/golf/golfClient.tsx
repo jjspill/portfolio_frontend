@@ -65,11 +65,7 @@ export const GolfHomePage = () => {
           </div>
           <div>
             <div className="w-full h-fit rounded-lg pt-2 px-4 text-center">
-              <Link
-                href={`/golf/leaderboard/${encodeURIComponent(
-                  'The Masters 2025'
-                )}`}
-              >
+              <Link href={`/golf/the-masters-2025`}>
                 <div className="bg-green-500 hover:bg-green-600 w-full rounded-lg my-2 px-4 py-2 shadow-lg">
                   <p className="text-white font-bold text-xl">
                     View Leaderboard
@@ -140,9 +136,7 @@ export const GolfHomePage = () => {
           )}
         </div>
         <div className="w-full h-fit rounded-lg py-2 px-4 text-center">
-          <Link
-            href={`/golf/leaderboard/${encodeURIComponent('The Masters 2025')}`}
-          >
+          <Link href={`/golf/the-masters-2025`}>
             <div className="bg-green-500 hover:bg-green-600 w-full rounded-lg my-2 px-4 py-2 shadow-lg">
               <p className="text-white font-bold text-xl">View Leaderboard</p>
             </div>
@@ -169,17 +163,12 @@ const InstructionsDiv = () => {
       <h1 className="font-bold mb-4">How to Play</h1>
       <div className="text-sm">
         <p>1. Create an account and login</p>
-        <p>2. Get the league id from the league owner</p>
-        <p>3. Join the league with the id and pick your team</p>
+        <p>3. Join the league and pick your team</p>
         <p>
           4. After submitting your picks, the leaderboard will update but your
           picks might not show up immediately, refresh
         </p>
         <p>5. To change picks, join the league again with the same account</p>
-        <p>
-          6. This is new / untested so if any difficulties arise (which they
-          will) just let me know
-        </p>
         <p className="font-bold">
           Note: Opponents picks are hidden until first tee and after that
           leagues are unable to be joined

@@ -40,7 +40,6 @@ export const LeaderboardContainer = ({
         next: { revalidate: 0 },
       });
       const data = await res.json();
-      console.log('Team data fetched:', data);
       setTeamData(data);
     };
 

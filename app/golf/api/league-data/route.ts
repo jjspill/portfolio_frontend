@@ -9,14 +9,12 @@ export async function GET(request: NextRequest) {
   const leagueId = request.nextUrl.searchParams.get('leagueId');
   if (!leagueId) {
     return new Response(
-      JSON.stringify({ error: 'An account is required to access this page.' }),
+      JSON.stringify({ error: 'An account is required to access this page.' })
     );
   }
-
   const encodedLeagueId = encodeURIComponent(leagueId);
 
   try {
-    console.log('Fetching teams for league:', leagueId);
     const res = await fetch(`${apiUrl}/golf/teams/${encodedLeagueId}`, {
       method: 'GET',
       headers: {
@@ -27,7 +25,6 @@ export async function GET(request: NextRequest) {
     });
 
     const league = await res.json();
-    console.log('League data fetched');
     if (!league?.data) {
       console.error('No data available');
       return new Response(JSON.stringify({ error: 'No data available' }));
@@ -46,7 +43,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Error in /golf POST request: ', error);
     return new Response(
-      JSON.stringify({ message: 'Failed to get teams', error }),
+      JSON.stringify({ message: 'Failed to get teams', error })
     );
   }
 }

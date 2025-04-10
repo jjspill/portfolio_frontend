@@ -26,13 +26,22 @@ export async function GET(request: NextRequest) {
   return new NextResponse(JSON.stringify(leaderboard));
 }
 
+// check the live last name and turn into local last name
 function fixLastName(lastName: string) {
-  if (lastName === 'Åberg') {
-    return 'Aberg';
-  } else if (lastName === 'Højgaard') {
-    return 'Hojgaard';
-  }
+  // if (lastName === 'Åberg') {
+  //   return 'Aberg';
+  // }
+  // if (lastName === 'Højgaard') {
+  //   return 'Hojgaard';
+  // }
   return lastName;
+}
+
+function fixFirstName(firstName: string) {
+  if (firstName === 'Á') {
+    return 'A';
+  }
+  return firstName;
 }
 
 const transformData = (data: any) => {
@@ -59,7 +68,7 @@ const transformData = (data: any) => {
           : null;
 
       return {
-        first_name: competitor.athlete.shortName.split('. ')[0],
+        first_name: fixFirstName(competitor.athlete.shortName.split('. ')[0]),
         last_name: fixLastName(competitor.athlete.shortName.split('. ').pop()),
         total_to_par:
           competitor.score === 'E' ? 0 : parseInt(competitor.score, 10),

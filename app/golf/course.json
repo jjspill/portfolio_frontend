@@ -1,6 +1,6 @@
 {
-  "tournament": "The Open 2024",
-  "course": "Royal Troon Golf Course, Troon, Scotland",
+  "tournament": "The Masters 2025",
+  "course": "Augusta National Golf Club, Augusta, Georgia",
   "holes": [
     {
       "hole_number": 1,
@@ -9,37 +9,37 @@
     },
     {
       "hole_number": 2,
-      "par": 4,
-      "current_par_through": 8
+      "par": 5,
+      "current_par_through": 9
     },
     {
       "hole_number": 3,
       "par": 4,
-      "current_par_through": 12
+      "current_par_through": 13
     },
     {
       "hole_number": 4,
-      "par": 5,
-      "current_par_through": 17
+      "par": 3,
+      "current_par_through": 16
     },
     {
       "hole_number": 5,
-      "par": 3,
+      "par": 4,
       "current_par_through": 20
     },
     {
       "hole_number": 6,
-      "par": 5,
-      "current_par_through": 25
+      "par": 3,
+      "current_par_through": 23
     },
     {
       "hole_number": 7,
       "par": 4,
-      "current_par_through": 29
+      "current_par_through": 27
     },
     {
       "hole_number": 8,
-      "par": 3,
+      "par": 5,
       "current_par_through": 32
     },
     {
@@ -59,38 +59,38 @@
     },
     {
       "hole_number": 12,
-      "par": 4,
-      "current_par_through": 48
+      "par": 3,
+      "current_par_through": 47
     },
     {
       "hole_number": 13,
-      "par": 4,
+      "par": 5,
       "current_par_through": 52
     },
     {
       "hole_number": 14,
-      "par": 3,
-      "current_par_through": 55
+      "par": 4,
+      "current_par_through": 56
     },
     {
       "hole_number": 15,
-      "par": 4,
-      "current_par_through": 59
+      "par": 5,
+      "current_par_through": 61
     },
     {
       "hole_number": 16,
-      "par": 5,
+      "par": 3,
       "current_par_through": 64
     },
     {
       "hole_number": 17,
-      "par": 3,
-      "current_par_through": 67
+      "par": 4,
+      "current_par_through": 68
     },
     {
       "hole_number": 18,
       "par": 4,
-      "current_par_through": 71
+      "current_par_through": 72
     }
   ]
 }
