@@ -15,7 +15,7 @@ interface LeaderboardContainerProps {
   leagueId: string;
 }
 
-export const LeaderboardContainer = () => {
+const LeaderboardContainer = () => {
   const leagueId = 'The Masters 2025';
   const [liveScores, setLiveScores] = useState({} as any);
   const [teamData, setTeamData] = useState([] as any);
