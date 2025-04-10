@@ -24,7 +24,7 @@ const LeaderboardContainer = () => {
   // from espn
   useEffect(() => {
     const fetchLiveScores = async () => {
-      const res = await fetch(`/golf/api/live-data}`, {
+      const res = await fetch(`/golf/api/live-data`, {
         cache: 'no-store',
       });
       const data = await res.json();
@@ -33,7 +33,7 @@ const LeaderboardContainer = () => {
 
     const fetchTeamData = async () => {
       const res = await fetch(
-        `/golf/api/league-data?leagueId=${encodeURIComponent(leagueId)}}`
+        `/golf/api/league-data?leagueId=${encodeURIComponent(leagueId)}`
       );
       const data = await res.json();
       setTeamData(data);
