@@ -125,7 +125,7 @@ const JoinLeaguePage: React.FC = () => {
         }
         alert('Team created successfully!');
         // revalidatePath(`/golf/leaderboard/${encodeURIComponent(leagueId)}`);
-        router.push(`/golf/the-masters-2025}`);
+        router.push(`/golf/the-masters-2025`);
       })
       .catch((error) => console.error('Error creating team:', error));
   };
