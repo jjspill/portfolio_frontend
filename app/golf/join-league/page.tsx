@@ -131,6 +131,7 @@ const JoinLeaguePage: React.FC = () => {
   };
 
   const pgaHasStarted = shouldDisplayData();
+  console.log('pgaHasStarted', pgaHasStarted);
 
   return (
     <PageContainer className="bg-none shadow-none rounded-none h-fit md:h-[90vh] max-w-2xl">
