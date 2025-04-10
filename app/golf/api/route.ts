@@ -1,13 +1,15 @@
 import { getAPIUrl } from 'config/config';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   const apiUrl = getAPIUrl();
   const username = request.headers.get('Username');
 
   if (!username) {
     return new NextResponse(
-      JSON.stringify({ error: 'An account is required to access this page.' }),
+      JSON.stringify({ error: 'An account is required to access this page.' })
     );
   }
 
@@ -27,7 +29,7 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error('Error in /golf POST request: ', error);
     return new NextResponse(
-      JSON.stringify({ message: 'Failed to get teams', error }),
+      JSON.stringify({ message: 'Failed to get teams', error })
     );
   }
 }

@@ -24,17 +24,18 @@ const LeaderboardContainer = () => {
   // from espn
   useEffect(() => {
     const fetchLiveScores = async () => {
-      const res = await fetch('/golf/api/live-data', {
+      const res = await fetch(`/golf/api/live-data?_=${Date.now()}`, {
         cache: 'no-store',
       });
       const data = await res.json();
       setLiveScores(data);
     };
 
-    // from dynamo
     const fetchTeamData = async () => {
       const res = await fetch(
-        `/golf/api/league-data?leagueId=${encodeURIComponent(leagueId)}`
+        `/golf/api/league-data?leagueId=${encodeURIComponent(
+          leagueId
+        )}&_=${Date.now()}`
       );
       const data = await res.json();
       setTeamData(data);
@@ -42,7 +43,7 @@ const LeaderboardContainer = () => {
 
     fetchLiveScores();
     fetchTeamData();
-  }, [leagueId]);
+  }, []);
 
   // empty state
   if (
