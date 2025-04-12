@@ -84,13 +84,13 @@ export const LeaderboardRow: React.FC<LeaderboardRowProps> = ({
           {playerOrder?.map((player, index) => (
             <div
               key={index}
-              className={`mt-2 p-2 rounded shadow bg-green-100
-                `}
-              // ${
-              //   index === playerOrder.length - 1
-              //     ? 'bg-red-100'
-              //     : 'bg-green-100'
-              // }
+              className={`mt-2 p-2 rounded shadow
+                ${
+                  index === playerOrder.length - 1
+                    ? 'bg-red-100'
+                    : 'bg-green-100'
+                }
+                  `}
             >
               <p>
                 {player.firstName} {player.lastName}
