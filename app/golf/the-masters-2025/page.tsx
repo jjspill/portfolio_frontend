@@ -81,7 +81,10 @@ const LeaderboardContainer = () => {
           <h1>{decodeURIComponent(leagueId)} Leaderboard</h1>
           <UpdatedTime date={updatedAt} />
           {round > 2 && (
-            <p className="text-base">Missed Cut Score: {highestScore.score}</p>
+            <p className="text-base">
+              Missed Cut Score: {highestScore.score >= 1 && '+'}
+              {highestScore.score}
+            </p>
           )}
         </div>
         <div className="w-full px-2 space-y-2">

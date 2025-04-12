@@ -55,7 +55,7 @@ const transformData = (data: any) => {
     (competitor: any) => {
       const status =
         competitor?.linescores.filter((score: any) => score?.value >= 0)
-          .length <= 2
+          .length <= 2 || competitor?.order >= 54
           ? 'cut'
           : 'active';
 
