@@ -39,7 +39,7 @@ function fixFirstName(firstName: string) {
 
 export function shouldDisplayData() {
   const now = new Date();
-  const targetDate = new Date(Date.UTC(2025, 3, 10, 11, 40, 0));
+  const targetDate = new Date(Date.UTC(2025, 4, 15, 11, 0, 0));
   return now >= targetDate;
 }
 

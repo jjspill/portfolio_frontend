@@ -1,15 +1,15 @@
 {
-  "tournament": "The Masters 2025",
-  "course": "Augusta National Golf Club, Augusta, Georgia",
+  "tournament": "PGA Championship",
+  "course": "Quail Hollow",
   "holes": [
     {
       "hole_number": 1,
-      "par": 4,
-      "current_par_through": 4
+      "par": 5,
+      "current_par_through": 5
     },
     {
       "hole_number": 2,
-      "par": 5,
+      "par": 4,
       "current_par_through": 9
     },
     {
@@ -34,12 +34,12 @@
     },
     {
       "hole_number": 7,
-      "par": 4,
-      "current_par_through": 27
+      "par": 5,
+      "current_par_through": 28
     },
     {
       "hole_number": 8,
-      "par": 5,
+      "par": 4,
       "current_par_through": 32
     },
     {
@@ -49,22 +49,22 @@
     },
     {
       "hole_number": 10,
-      "par": 4,
-      "current_par_through": 40
+      "par": 5,
+      "current_par_through": 41
     },
     {
       "hole_number": 11,
       "par": 4,
-      "current_par_through": 44
+      "current_par_through": 45
     },
     {
       "hole_number": 12,
-      "par": 3,
-      "current_par_through": 47
+      "par": 4,
+      "current_par_through": 49
     },
     {
       "hole_number": 13,
-      "par": 5,
+      "par": 3,
       "current_par_through": 52
     },
     {
@@ -79,12 +79,12 @@
     },
     {
       "hole_number": 16,
-      "par": 3,
-      "current_par_through": 64
+      "par": 4,
+      "current_par_through": 65
     },
     {
       "hole_number": 17,
-      "par": 4,
+      "par": 3,
       "current_par_through": 68
     },
     {
