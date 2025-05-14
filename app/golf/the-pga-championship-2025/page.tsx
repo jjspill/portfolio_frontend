@@ -33,7 +33,9 @@ const LeaderboardContainer = () => {
 
     const fetchTeamData = async () => {
       const res = await fetch(
-        `/golf/api/league-data?leagueId=${encodeURIComponent(leagueId)}`
+        `/golf/api/league-data?leagueId=${encodeURIComponent(
+          'the-pga-championship-2025'
+        )}`
       );
       const data = await res.json();
       setTeamData(data);
