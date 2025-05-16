@@ -3,7 +3,6 @@ import course from '../../course.json';
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
-  console.log('Fetching live data');
   // revalidatePath('/golf/leaderboard/theopen2k24', 'page');
   const res = await fetch(
     'https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard',
@@ -31,12 +30,15 @@ export async function GET(request: NextRequest) {
 
 // check the live last name and turn into local last name
 function fixLastName(lastName: string) {
-  // if (lastName === 'Åberg') {
-  //   return 'Aberg';
-  // }
-  // if (lastName === 'Højgaard') {
-  //   return 'Hojgaard';
-  // }
+  if (lastName === 'Åberg') {
+    return 'Aberg';
+  }
+  if (lastName === 'Højgaard') {
+    return 'Hojgaard';
+  }
+  if (lastName === 'van Rooyen') {
+    return 'Rooyen';
+  }
   return lastName;
 }
 
