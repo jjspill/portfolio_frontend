@@ -86,7 +86,7 @@ export const LeaderboardRow: React.FC<LeaderboardRowProps> = ({
               key={index}
               className={`mt-2 p-2 rounded shadow
                 ${
-                  index === playerOrder.length - 1
+                  index >= playerOrder.length - 2
                     ? 'bg-red-100'
                     : 'bg-green-100'
                 }
