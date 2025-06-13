@@ -108,7 +108,7 @@ export const LeaderboardRow: React.FC<LeaderboardRowProps> = ({
                 <>
                   <p>Today: {fixScore(player.todaysScore)}</p>
                   <p>Through: {player.numHoles}</p>
-                  <Scorecard scores={player.scoreList!} />
+                  {/* <Scorecard scores={player.scoreList!} /> */}
                 </>
               )}
               {/* <p>Round: {player.round}</p> */}
