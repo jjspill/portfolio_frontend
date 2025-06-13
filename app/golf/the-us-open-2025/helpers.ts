@@ -45,7 +45,7 @@ export function shouldDisplayData() {
 
 function getTotalOfLowestScores(scores: number[]): number {
   const sortedScores = scores.sort((a, b) => a - b);
-  const lowest5Scores = sortedScores.slice(0, 5);
+  const lowest5Scores = sortedScores.slice(0, 4);
   const total = lowest5Scores.reduce((acc, score) => acc + score, 0);
   return total;
 }
