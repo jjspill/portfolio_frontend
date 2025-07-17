@@ -14,6 +14,8 @@ export async function GET(request: NextRequest) {
   }
   const encodedLeagueId = encodeURIComponent(leagueId);
 
+  console.log('api url', apiUrl, encodedLeagueId);
+
   try {
     const res = await fetch(`${apiUrl}/golf/teams/${encodedLeagueId}`, {
       method: 'GET',

@@ -16,7 +16,7 @@ interface LeaderboardContainerProps {
 }
 
 const LeaderboardContainer = () => {
-  const leagueId = 'The US Open 2025';
+  const leagueId = 'The Open Championship 2025';
   const [liveScores, setLiveScores] = useState({} as any);
   const [teamData, setTeamData] = useState([] as any);
   const { user, setUser } = useUser();
@@ -34,7 +34,7 @@ const LeaderboardContainer = () => {
     const fetchTeamData = async () => {
       const res = await fetch(
         `/golf/api/league-data?leagueId=${encodeURIComponent(
-          'the-us-open-2025'
+          'the-open-championship-2025'
         )}`
       );
       const data = await res.json();

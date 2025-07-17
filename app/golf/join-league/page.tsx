@@ -42,7 +42,9 @@ interface OptionType {
 const JoinLeaguePage: React.FC = () => {
   const router = useRouter();
   const [teamName, setTeamName] = useState<string>('');
-  const [leagueId, setLeagueId] = useState<string>('the-us-open-2025');
+  const [leagueId, setLeagueId] = useState<string>(
+    'the-open-championship-2025'
+  );
   const [selectedPlayers, setSelectedPlayers] = useState<{
     [key: string]: OptionType[];
   }>({});
@@ -125,7 +127,7 @@ const JoinLeaguePage: React.FC = () => {
         }
         alert('Team created successfully!');
         // revalidatePath(`/golf/leaderboard/${encodeURIComponent(leagueId)}`);
-        router.push(`/golf/the-us-open-2025`);
+        router.push(`/golf/the-open-championship-2025`);
       })
       .catch((error) => console.error('Error creating team:', error));
   };
@@ -182,7 +184,7 @@ const JoinLeaguePage: React.FC = () => {
         ) : (
           <div className="text-center">
             <h1 className="text-lg font-bold mb-4">Join a League</h1>
-            <p>The US Open 2025 has started, join next year!</p>
+            <p>The Open Championship 2025 has started, join next year!</p>
           </div>
         )}
       </div>

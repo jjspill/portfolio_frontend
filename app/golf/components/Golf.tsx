@@ -70,7 +70,7 @@ export const GolfTeam: React.FC<DisplayTeamProps> = ({
 }) => {
   return (
     <div className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg my-3 w-full">
-      <Link href={`/golf/the-us-open-2025`}>
+      <Link href={`/golf/the-open-championship-2025`}>
         <div className="flex justify-between items-center w-full">
           <div className="flex-1 text-center pr-2">
             <p>{teamName}</p>
@@ -93,7 +93,7 @@ export const GolfLeague: React.FC<GolfLeagueProps> = ({
   return (
     <div>
       <Link
-        href={`/golf/the-us-open-2025`}
+        href={`/golf/the-open-championship-2025`}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
         <div className="flex justify-start items-center">
