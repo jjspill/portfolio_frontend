@@ -40,7 +40,7 @@ function fixFirstName(firstName: string) {
 export function shouldDisplayData() {
   const now = new Date();
   const targetDate = new Date(Date.UTC(2025, 6, 17, 5, 35, 0));
-  return now >= targetDate;
+  return now < targetDate;
 }
 
 function getTotalOfLowestScores(scores: number[]): number {
